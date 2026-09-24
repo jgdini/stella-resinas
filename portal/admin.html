@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administração — Portal do Cliente</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/logo-aclaris.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="mock-banner">Protótipo clicável — cadastrar cliente e enviar documento aqui não gravam nada de verdade ainda.</div>
+
+<header class="portal-bar">
+  <div class="container">
+    <div class="brands">
+      <img src="assets/img/logo-aclaris.png" alt="Aclaris">
+      <div class="divider"></div>
+      <img src="assets/img/logo-stella.png" alt="Stella Resinas">
+      <span class="wordmark">Portal do Cliente · Admin</span>
+    </div>
+    <div class="who">
+      <span>Administradora</span>
+      <a href="login.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <div class="container">
+    <div class="shell-head">
+      <div>
+        <h1>Administração</h1>
+        <p>Cadastre clientes e envie laudos e fotos para o portal de cada um.</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box"><span class="n">12</span><span class="l"> — Clientes cadastrados</span></div>
+      <div class="stat-box"><span class="n">2</span><span class="l"> — Convites pendentes</span></div>
+      <div class="stat-box"><span class="n">54</span><span class="l"> — Documentos no portal</span></div>
+    </div>
+
+    <div class="tab-nav">
+      <button class="tab-btn is-active" data-tab="clientes">Clientes</button>
+      <button class="tab-btn" data-tab="documentos">Documentos</button>
+    </div>
+
+    <div data-tab-panel="clientes" style="padding-top:24px">
+      <div class="admin-grid">
+        <div class="panel-card">
+          <div class="panel-card__head"><h2>Clientes cadastrados</h2></div>
+          <div class="panel-card__body" style="padding:0; overflow-x:auto">
+            <table class="client-table">
+              <thead>
+                <tr><th>Empresa</th><th>CNPJ</th><th>Acesso a</th><th>Status</th><th></th></tr>
+              </thead>
+              <tbody id="client-table-body">
+                <tr>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td style="font-family:var(--font-mono)">12.345.678/0001-90</td>
+                  <td>Ambas</td>
+                  <td><span class="status-pill active"><i></i>Ativo</span></td>
+                  <td><button class="icon-btn" title="Reenviar convite">↻</button></td>
+                </tr>
+                <tr>
+                  <td>Cosméticos Bela Vista S.A.</td>
+                  <td style="font-family:var(--font-mono)">23.456.789/0001-11</td>
+                  <td>Aclaris</td>
+                  <td><span class="status-pill active"><i></i>Ativo</span></td>
+                  <td><button class="icon-btn" title="Reenviar convite">↻</button></td>
+                </tr>
+                <tr>
+                  <td>Metalúrgica Rio Verde Ltda</td>
+                  <td style="font-family:var(--font-mono)">34.567.890/0001-22</td>
+                  <td>Stella Resinas</td>
+                  <td><span class="status-pill pending"><i></i>Convite enviado</span></td>
+                  <td><button class="icon-btn" title="Reenviar convite">↻</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card__head"><h2>Cadastrar cliente</h2></div>
+          <div class="panel-card__body">
+            <form id="add-client-form">
+              <div class="form-grid2">
+                <div class="field full">
+                  <label for="novo-nome">Razão social</label>
+                  <input id="novo-nome" type="text" required>
+                </div>
+                <div class="field">
+                  <label for="novo-cnpj">CNPJ</label>
+                  <input id="novo-cnpj" type="text" placeholder="00.000.000/0000-00" required>
+                </div>
+                <div class="field">
+                  <label for="novo-empresa">Acesso a</label>
+                  <select id="novo-empresa" class="select-input">
+                    <option>Aclaris</option>
+                    <option>Stella Resinas</option>
+                    <option>Ambas</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="novo-email">E-mail do responsável</label>
+                  <input id="novo-email" type="email" required>
+                </div>
+              </div>
+              <p class="field-hint" style="margin:4px 0 16px">Um e-mail com link para definir a senha é enviado automaticamente ao cliente.</p>
+              <button type="submit" class="btn btn-gold btn-block">Cadastrar e enviar convite</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-tab-panel="documentos" hidden style="padding-top:24px">
+      <div class="admin-grid">
+        <div class="panel-card">
+          <div class="panel-card__head">
+            <h2>Documentos enviados</h2>
+            <select id="doc-filter-cliente" class="select-input" style="width:auto">
+              <option value="todos">Todos os clientes</option>
+              <option value="Indústria Exemplo Ltda">Indústria Exemplo Ltda</option>
+              <option value="Cosméticos Bela Vista S.A.">Cosméticos Bela Vista S.A.</option>
+              <option value="Metalúrgica Rio Verde Ltda">Metalúrgica Rio Verde Ltda</option>
+            </select>
+          </div>
+          <div class="panel-card__body" style="padding:0; overflow-x:auto">
+            <table class="client-table">
+              <thead>
+                <tr><th>Documento</th><th>Cliente</th><th>Empresa</th><th>Categoria</th><th>Data</th><th>Ações</th></tr>
+              </thead>
+              <tbody id="doc-table-body">
+                <tr data-doc-id="1" data-cliente="Indústria Exemplo Ltda" data-empresa="stella" data-categoria="Laudo técnico" data-data="2026-09-18" data-titulo="Laudo de Regeneração — Lote TQ-04">
+                  <td>Laudo de Regeneração — Lote TQ-04</td>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td><span class="company-tag stella">Stella Resinas</span></td>
+                  <td>Laudo técnico</td>
+                  <td style="font-family:var(--font-mono)">18/09/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="2" data-cliente="Indústria Exemplo Ltda" data-empresa="aclaris" data-categoria="Foto de serviço" data-data="2026-09-15" data-titulo="Fotos — Manutenção preventiva do sistema RO">
+                  <td>Fotos — Manutenção preventiva do sistema RO</td>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td><span class="company-tag aclaris">Aclaris</span></td>
+                  <td>Foto de serviço</td>
+                  <td style="font-family:var(--font-mono)">15/09/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="3" data-cliente="Metalúrgica Rio Verde Ltda" data-empresa="stella" data-categoria="Foto de serviço" data-data="2026-09-10" data-titulo="Fotos — Manutenção de trocador de calor">
+                  <td>Fotos — Manutenção de trocador de calor</td>
+                  <td>Metalúrgica Rio Verde Ltda</td>
+                  <td><span class="company-tag stella">Stella Resinas</span></td>
+                  <td>Foto de serviço</td>
+                  <td style="font-family:var(--font-mono)">10/09/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="4" data-cliente="Indústria Exemplo Ltda" data-empresa="aclaris" data-categoria="Laudo técnico" data-data="2026-08-22" data-titulo="Relatório Diagnóstico 360°">
+                  <td>Relatório Diagnóstico 360°</td>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td><span class="company-tag aclaris">Aclaris</span></td>
+                  <td>Laudo técnico</td>
+                  <td style="font-family:var(--font-mono)">22/08/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="5" data-cliente="Cosméticos Bela Vista S.A." data-empresa="aclaris" data-categoria="Laudo técnico" data-data="2026-08-22" data-titulo="Relatório Diagnóstico 360°">
+                  <td>Relatório Diagnóstico 360°</td>
+                  <td>Cosméticos Bela Vista S.A.</td>
+                  <td><span class="company-tag aclaris">Aclaris</span></td>
+                  <td>Laudo técnico</td>
+                  <td style="font-family:var(--font-mono)">22/08/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="6" data-cliente="Indústria Exemplo Ltda" data-empresa="stella" data-categoria="Laudo técnico" data-data="2026-08-05" data-titulo="Laudo de Regeneração — Lote TQ-03">
+                  <td>Laudo de Regeneração — Lote TQ-03</td>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td><span class="company-tag stella">Stella Resinas</span></td>
+                  <td>Laudo técnico</td>
+                  <td style="font-family:var(--font-mono)">05/08/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="7" data-cliente="Indústria Exemplo Ltda" data-empresa="stella" data-categoria="Foto de serviço" data-data="2026-08-05" data-titulo="Fotos — Coleta de colunas para regeneração">
+                  <td>Fotos — Coleta de colunas para regeneração</td>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td><span class="company-tag stella">Stella Resinas</span></td>
+                  <td>Foto de serviço</td>
+                  <td style="font-family:var(--font-mono)">05/08/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="8" data-cliente="Indústria Exemplo Ltda" data-empresa="stella" data-categoria="Laudo técnico" data-data="2026-06-11" data-titulo="Laudo de Regeneração — Lote TQ-02">
+                  <td>Laudo de Regeneração — Lote TQ-02</td>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td><span class="company-tag stella">Stella Resinas</span></td>
+                  <td>Laudo técnico</td>
+                  <td style="font-family:var(--font-mono)">11/06/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+                <tr data-doc-id="9" data-cliente="Indústria Exemplo Ltda" data-empresa="aclaris" data-categoria="Foto de serviço" data-data="2026-06-02" data-titulo="Fotos — Instalação do sistema de ultrafiltração">
+                  <td>Fotos — Instalação do sistema de ultrafiltração</td>
+                  <td>Indústria Exemplo Ltda</td>
+                  <td><span class="company-tag aclaris">Aclaris</span></td>
+                  <td>Foto de serviço</td>
+                  <td style="font-family:var(--font-mono)">02/06/2026</td>
+                  <td class="doc-actions">
+                    <button class="icon-btn" data-action="editar" title="Editar">✎</button>
+                    <button class="icon-btn danger" data-action="excluir" title="Excluir">🗑</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card__head"><h2 id="upload-doc-title">Enviar documento</h2></div>
+          <div class="panel-card__body">
+            <form id="upload-doc-form">
+              <div class="form-grid2">
+                <div class="field full">
+                  <label for="doc-cliente">Cliente</label>
+                  <select id="doc-cliente" class="select-input">
+                    <option>Indústria Exemplo Ltda</option>
+                    <option>Cosméticos Bela Vista S.A.</option>
+                    <option>Metalúrgica Rio Verde Ltda</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="doc-empresa">Empresa</label>
+                  <select id="doc-empresa" class="select-input">
+                    <option>Aclaris</option>
+                    <option>Stella Resinas</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="doc-categoria">Categoria</label>
+                  <select id="doc-categoria" class="select-input">
+                    <option>Laudo técnico</option>
+                    <option>Foto de serviço</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="doc-data">Data</label>
+                  <input id="doc-data" type="date" required>
+                </div>
+                <div class="field full">
+                  <label for="doc-titulo">Título</label>
+                  <input id="doc-titulo" type="text" placeholder="Ex.: Laudo de Regeneração — Lote TQ-05" required>
+                </div>
+                <div class="field full">
+                  <label for="doc-arquivo">Arquivo(s)</label>
+                  <input id="doc-arquivo" type="file" multiple>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-gold btn-block" id="upload-doc-submit" style="margin-top:6px">Enviar ao portal do cliente</button>
+                <button type="button" class="btn btn-ghost" id="cancel-edit-doc" style="margin-top:6px" hidden>Cancelar edição</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

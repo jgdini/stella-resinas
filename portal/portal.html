@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meus Documentos — Portal do Cliente</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/logo-aclaris.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="mock-banner">Protótipo clicável — documentos abaixo são exemplos, não arquivos reais.</div>
+
+<header class="portal-bar">
+  <div class="container">
+    <div class="brands">
+      <img src="assets/img/logo-aclaris.png" alt="Aclaris">
+      <div class="divider"></div>
+      <img src="assets/img/logo-stella.png" alt="Stella Resinas">
+      <span class="wordmark">Portal do Cliente</span>
+    </div>
+    <div class="who">
+      <span>Indústria Exemplo Ltda</span>
+      <a href="login.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <div class="container">
+    <div class="shell-head">
+      <div>
+        <h1>Meus documentos</h1>
+        <p>Laudos técnicos e fotos de serviço da Aclaris e da Stella Resinas, organizados por data.</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box"><span class="n">7</span><span class="l"> — Documentos ao todo</span></div>
+      <div class="stat-box"><span class="n">4</span><span class="l"> — Laudos e relatórios</span></div>
+      <div class="stat-box"><span class="n">3</span><span class="l"> — Fotos de serviço</span></div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn is-active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="laudo">Laudos e relatórios</button>
+      <button class="filter-btn" data-filter="foto">Fotos de serviço</button>
+    </div>
+
+    <div class="date-group">
+      <div class="date-group__label">Setembro de 2026</div>
+
+      <div class="doc-row" data-category="laudo">
+        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__main">
+          <div class="doc-row__title">Laudo de Regeneração — Lote TQ-04</div>
+          <div class="doc-row__meta">
+            <span class="company-tag stella">Stella Resinas</span>
+            <span>18 set 2026</span>
+            <span>PDF · 480 KB</span>
+          </div>
+        </div>
+        <div class="doc-row__action"><button class="btn btn-ghost">Baixar</button></div>
+      </div>
+
+      <div class="doc-row" data-category="foto">
+        <div class="doc-row__icon foto">🖼️</div>
+        <div class="doc-row__main">
+          <div class="doc-row__title">Fotos — Manutenção preventiva do sistema RO</div>
+          <div class="doc-row__meta">
+            <span class="company-tag aclaris">Aclaris</span>
+            <span>15 set 2026</span>
+            <span>6 fotos</span>
+          </div>
+        </div>
+        <div class="doc-row__action"><button class="btn btn-ghost">Ver fotos</button></div>
+      </div>
+    </div>
+
+    <div class="date-group">
+      <div class="date-group__label">Agosto de 2026</div>
+
+      <div class="doc-row" data-category="laudo">
+        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__main">
+          <div class="doc-row__title">Relatório Diagnóstico 360°</div>
+          <div class="doc-row__meta">
+            <span class="company-tag aclaris">Aclaris</span>
+            <span>22 ago 2026</span>
+            <span>PDF · 1.2 MB</span>
+          </div>
+        </div>
+        <div class="doc-row__action"><button class="btn btn-ghost">Baixar</button></div>
+      </div>
+
+      <div class="doc-row" data-category="laudo">
+        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__main">
+          <div class="doc-row__title">Laudo de Regeneração — Lote TQ-03</div>
+          <div class="doc-row__meta">
+            <span class="company-tag stella">Stella Resinas</span>
+            <span>05 ago 2026</span>
+            <span>PDF · 465 KB</span>
+          </div>
+        </div>
+        <div class="doc-row__action"><button class="btn btn-ghost">Baixar</button></div>
+      </div>
+
+      <div class="doc-row" data-category="foto">
+        <div class="doc-row__icon foto">🖼️</div>
+        <div class="doc-row__main">
+          <div class="doc-row__title">Fotos — Coleta de colunas para regeneração</div>
+          <div class="doc-row__meta">
+            <span class="company-tag stella">Stella Resinas</span>
+            <span>05 ago 2026</span>
+            <span>4 fotos</span>
+          </div>
+        </div>
+        <div class="doc-row__action"><button class="btn btn-ghost">Ver fotos</button></div>
+      </div>
+    </div>
+
+    <div class="date-group">
+      <div class="date-group__label">Junho de 2026</div>
+
+      <div class="doc-row" data-category="laudo">
+        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__main">
+          <div class="doc-row__title">Laudo de Regeneração — Lote TQ-02</div>
+          <div class="doc-row__meta">
+            <span class="company-tag stella">Stella Resinas</span>
+            <span>11 jun 2026</span>
+            <span>PDF · 450 KB</span>
+          </div>
+        </div>
+        <div class="doc-row__action"><button class="btn btn-ghost">Baixar</button></div>
+      </div>
+
+      <div class="doc-row" data-category="foto">
+        <div class="doc-row__icon foto">🖼️</div>
+        <div class="doc-row__main">
+          <div class="doc-row__title">Fotos — Instalação do sistema de ultrafiltração</div>
+          <div class="doc-row__meta">
+            <span class="company-tag aclaris">Aclaris</span>
+            <span>02 jun 2026</span>
+            <span>9 fotos</span>
+          </div>
+        </div>
+        <div class="doc-row__action"><button class="btn btn-ghost">Ver fotos</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

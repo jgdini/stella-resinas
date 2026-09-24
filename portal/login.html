@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal do Cliente — Aclaris &amp; Stella Resinas</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/logo-aclaris.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="mock-banner">Protótipo clicável — sem login real ainda. Fluxo final entra na migração para WordPress.</div>
+
+<header class="portal-bar">
+  <div class="container">
+    <div class="brands">
+      <img src="assets/img/logo-aclaris.png" alt="Aclaris">
+      <div class="divider"></div>
+      <img src="assets/img/logo-stella.png" alt="Stella Resinas">
+      <span class="wordmark">Portal do Cliente</span>
+    </div>
+  </div>
+</header>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <p class="eyebrow">Acesso do cliente</p>
+    <h1>Entrar no portal</h1>
+    <p class="lede">Consulte laudos técnicos e fotos de serviço da Aclaris e da Stella Resinas em um só lugar.</p>
+
+    <form id="login-form">
+      <div class="field">
+        <label for="cnpj">CNPJ</label>
+        <input id="cnpj" name="cnpj" type="text" inputmode="numeric" placeholder="00.000.000/0000-00" required>
+      </div>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input id="senha" name="senha" type="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+    </form>
+
+    <div class="auth-links">
+      Primeiro acesso? <a href="primeiro-acesso.html">Defina sua senha aqui</a>
+    </div>
+
+    <p class="auth-note">O login é feito com o CNPJ da sua empresa. A senha é definida por você no primeiro acesso, a partir do link enviado por e-mail — nunca é uma senha padrão.</p>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

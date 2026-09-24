@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Definir senha — Portal do Cliente</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/logo-aclaris.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="mock-banner">Protótipo clicável — simula o link que chega por e-mail no primeiro acesso.</div>
+
+<header class="portal-bar">
+  <div class="container">
+    <div class="brands">
+      <img src="assets/img/logo-aclaris.png" alt="Aclaris">
+      <div class="divider"></div>
+      <img src="assets/img/logo-stella.png" alt="Stella Resinas">
+      <span class="wordmark">Portal do Cliente</span>
+    </div>
+  </div>
+</header>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+
+    <div id="first-access-form-wrap">
+      <p class="eyebrow">Primeiro acesso</p>
+      <h1>Defina sua senha</h1>
+      <p class="lede">Você chegou aqui pelo link enviado para <strong>contato@empresaexemplo.com.br</strong>. Esse link só funciona uma vez.</p>
+
+      <form id="first-access-form">
+        <div class="field">
+          <label for="nova-senha">Nova senha</label>
+          <input id="nova-senha" name="nova-senha" type="password" minlength="8" required>
+          <span class="field-hint">Mínimo de 8 caracteres.</span>
+        </div>
+        <div class="field">
+          <label for="confirma-senha">Confirmar senha</label>
+          <input id="confirma-senha" name="confirma-senha" type="password" minlength="8" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Salvar senha e entrar</button>
+      </form>
+    </div>
+
+    <div id="first-access-success" hidden>
+      <div class="auth-success">
+        <span>✓</span>
+        <span>Senha definida com sucesso. A partir de agora, use seu CNPJ e essa senha para entrar.</span>
+      </div>
+      <a href="portal.html" class="btn btn-gold btn-block">Ir para o portal →</a>
+    </div>
+
+    <p class="auth-note">Assim que a administradora cadastra sua empresa, um link como este chega automaticamente no e-mail informado. Ninguém, nem a equipe da Aclaris/Stella Resinas, sabe a senha que você escolher aqui.</p>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
