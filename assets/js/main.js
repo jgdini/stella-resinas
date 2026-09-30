@@ -151,4 +151,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Institutional home video: sound toggle
+  const videoInst = document.getElementById('video-institucional');
+  const soundBtn = document.getElementById('video-institucional-sound');
+  if (videoInst && soundBtn) {
+    soundBtn.addEventListener('click', () => {
+      const nowMuted = !videoInst.muted;
+      videoInst.muted = nowMuted;
+      soundBtn.setAttribute('aria-pressed', String(!nowMuted));
+      soundBtn.querySelector('span').textContent = nowMuted ? 'Ativar som' : 'Desativar som';
+      soundBtn.querySelector('svg').innerHTML = nowMuted
+        ? '<path d="M11 5 6 9H2v6h4l5 4V5Z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>'
+        : '<path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/>';
+    });
+  }
 });

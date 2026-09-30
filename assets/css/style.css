@@ -114,6 +114,31 @@ button{ font-family:inherit; }
   backdrop-filter:saturate(140%) blur(10px);
   border-bottom:1px solid var(--line);
 }
+.header-topbar{
+  background:var(--ink);
+  padding:7px 0;
+  position:relative;
+  z-index:101;
+}
+.header-topbar .container{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:14px;
+}
+.header-topbar a{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.03em;
+  color:#C9D2DC;
+  white-space:nowrap;
+  transition:color .15s ease;
+}
+.header-topbar a:hover{ color:var(--white); }
+.header-topbar .topbar-divider{ width:1px; height:11px; background:rgba(255,255,255,0.25); flex:none; }
+@media (max-width:520px){
+  .header-topbar a small{ display:none; }
+}
 
 .header-flow{
   position:absolute;
@@ -986,6 +1011,45 @@ section{ padding:96px 0; }
   font-size:16px;
   position:relative;
 }
+
+/* ---------- institutional video band (home) ---------- */
+.video-band{
+  position:relative;
+  width:100%;
+  height:clamp(320px,52vw,600px);
+  overflow:hidden;
+  background:var(--ink);
+}
+.video-band__media{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.video-band__sound{
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:30px;
+  border:1px solid rgba(247,245,240,0.35);
+  background:rgba(11,33,56,0.55);
+  backdrop-filter:blur(6px);
+  color:var(--white);
+  font-family:var(--font-mono);
+  font-size:11.5px;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:border-color .15s ease, background .15s ease;
+}
+.video-band__sound:hover{ border-color:var(--white); background:rgba(11,33,56,0.75); }
+.video-band__sound svg{ width:16px; height:16px; flex:none; }
 
 /* ---------- generic content blocks reused across inner pages ---------- */
 .prose{ max-width:70ch; }
