@@ -6,7 +6,7 @@ Site: https://jgdini.github.io/stella-resinas/
 
 ## Fatos principais
 
-- Em atividade desde 1998. Mais de 28 anos regenerando resinas de troca iônica.
+- Em atividade desde 1998 (fundação da Stella Resinas). Mais de 28 anos regenerando resinas de troca iônica. Desde a divisão estratégica de 2023, cuida da execução técnica e dos serviços do grupo; a Aclaris cuida do comercial e dos projetos.
 - Sede e unidade de regeneração: R. Afonso Desidério, 30, Taboão da Serra (SP), CEP 06795-040. Atendimento de segunda a sexta, das 07:30 às 17:30.
 - Contato: (11) 4786-8000, WhatsApp (11) 4787-6402. Redes: Instagram @stellaresinas e LinkedIn stella-resinas.
 - Regeneração individual, sem mistura de resinas entre clientes. Cada coluna é identificada e numerada com QR Code. Uma amostra de 1 litro é testada a cada regeneração, com pH, condutividade e laudo técnico.
@@ -23,6 +23,12 @@ Site: https://jgdini.github.io/stella-resinas/
 - [Blog](https://jgdini.github.io/stella-resinas/blog.html): Artigos técnicos sobre regeneração de resinas de troca iônica: quando regenerar, transporte de colunas, eletroerosão e o Sistema Leva e Traz.
 - [Trabalhe Conosco](https://jgdini.github.io/stella-resinas/trabalhe-conosco.html): Vaga aberta de Auxiliar Comercial na Stella Resinas, em Taboão da Serra, SP. Veja as atividades e os requisitos e envie seu currículo por e-mail.
 - [Contato](https://jgdini.github.io/stella-resinas/contato.html): Solicite a coleta da sua resina ou tire dúvidas sobre regeneração e manutenção. Taboão da Serra, SP. Atendimento de segunda a sexta, das 07:30 às 17:30.
+- [Regeneração de resinas](https://jgdini.github.io/stella-resinas/regeneracao-de-resinas.html): Regeneração individual de resinas de troca iônica: QR Code em cada coluna, amostra de 1 litro testada a cada lote e relatório técnico. Peça a coleta.
+- [Sistema Leva e Traz](https://jgdini.github.io/stella-resinas/sistema-leva-e-traz.html): Coleta, transporte próprio, regeneração e devolução da resina em seis etapas, com relatório e documentação para auditorias. Reduza a parada do sistema.
+- [Manutenção e sanitização](https://jgdini.github.io/stella-resinas/manutencao-preventiva.html): Manutenção preventiva e corretiva, sanitização de colunas de leito misto, limpeza química, readequação de sistemas e locação de sistemas SDI.
+- [Regenerar a resina na hora certa não é achismo, é controle de processo](https://jgdini.github.io/stella-resinas/blog-regenerar-a-resina-na-hora-certa-nao-e-achismo-e-controle-de-processo.html): Quando a resina satura, a qualidade da água cai mesmo com o sistema funcionando. Veja os sinais de atenção e o que muda ao regenerar no tempo certo.
+- [No transporte da coluna, retirar a água interna não é detalhe](https://jgdini.github.io/stella-resinas/blog-no-transporte-da-coluna-retirar-a-agua-interna-nao-e-detalhe.html): No transporte da coluna para regeneração, retirar a água interna é segurança e preservação do equipamento. O procedimento correto evita danos à resina.
+- [Regeneração de resina na eletroerosão: quando compensa e quanto se economiza](https://jgdini.github.io/stella-resinas/blog-regeneracao-de-resina-na-eletroerosao-quando-compensa-e-quanto-se-economiza.html): Nem toda resina saturada precisa virar descarte. Veja quando regenerar compensa na eletroerosão e como os tipos de resina mudam o custo e a eficiência.
 
 ## Perguntas frequentes
 
