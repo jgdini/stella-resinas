@@ -1,0 +1,25 @@
+# Protótipo de redesign (Stella Resinas) para aprovação.
+# Na migração para o WordPress, o domínio do sitemap e dos canonicals passa a ser o oficial.
+User-agent: *
+Allow: /
+Disallow: /portal/
+
+# Buscadores e assistentes de IA liberados (GEO/AEO)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://jgdini.github.io/stella-resinas/sitemap.xml

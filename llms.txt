@@ -1,0 +1,45 @@
+# Stella Resinas
+
+> Empresa de Taboão da Serra (SP), em atividade desde 1998, que regenera resinas de troca iônica lote a lote, identifica cada coluna com QR Code e cuida da coleta e da devolução pelo Sistema Leva e Traz. Executa os serviços da estrutura integrada com a Aclaris.
+
+Site: https://jgdini.github.io/stella-resinas/
+
+## Fatos principais
+
+- Em atividade desde 1998. Mais de 28 anos regenerando resinas de troca iônica.
+- Sede e unidade de regeneração: R. Afonso Desidério, 30, Taboão da Serra (SP), CEP 06795-040. Atendimento de segunda a sexta, das 07:30 às 17:30.
+- Contato: (11) 4786-8000, WhatsApp (11) 4787-6402. Redes: Instagram @stellaresinas e LinkedIn stella-resinas.
+- Regeneração individual, sem mistura de resinas entre clientes. Cada coluna é identificada e numerada com QR Code. Uma amostra de 1 litro é testada a cada regeneração, com pH, condutividade e laudo técnico.
+- Custo: regenerar sai de 40% a 60% mais barato que resina nova, segundo a empresa.
+- Resinas atendidas: leitos mistos e separados, abrandadores, remoção de nitrato e bário e resinas especiais.
+- Sistema Leva e Traz: agendamento, retirada, transporte próprio até Taboão da Serra, processamento e devolução. Sujeito à disponibilidade conforme a região.
+- Empresa irmã: Aclaris (projetos e comercial de tratamento de água industrial), https://aclaris.com.br/.
+
+## Páginas
+
+- [Início](https://jgdini.github.io/stella-resinas/): Regeneramos resina de troca iônica com rastreabilidade por QR Code, sem misturar clientes, e coleta com o Sistema Leva e Traz. Desde 1998 em Taboão da Serra, SP.
+- [Serviços](https://jgdini.github.io/stella-resinas/servicos.html): Regeneração e ativação de resinas, manutenção preventiva e corretiva, sanitização de colunas, limpeza química e o Sistema Leva e Traz de coleta e devolução.
+- [Quem Somos](https://jgdini.github.io/stella-resinas/sobre.html): Desde 1998 regenerando resinas de troca iônica com controle de qualidade individual. Estrutura integrada com a Aclaris: projetos de um lado, execução do outro.
+- [Blog](https://jgdini.github.io/stella-resinas/blog.html): Artigos técnicos sobre regeneração de resinas de troca iônica: quando regenerar, transporte de colunas, eletroerosão e o Sistema Leva e Traz.
+- [Trabalhe Conosco](https://jgdini.github.io/stella-resinas/trabalhe-conosco.html): Vaga aberta de Auxiliar Comercial na Stella Resinas, em Taboão da Serra, SP. Veja as atividades e os requisitos e envie seu currículo por e-mail.
+- [Contato](https://jgdini.github.io/stella-resinas/contato.html): Solicite a coleta da sua resina ou tire dúvidas sobre regeneração e manutenção. Taboão da Serra, SP. Atendimento de segunda a sexta, das 07:30 às 17:30.
+
+## Perguntas frequentes
+
+**Quanto custa regenerar a resina em comparação com comprar nova?**
+A regeneração custa de 40% a 60% menos que resina nova, segundo a Stella. O valor exato depende do tipo e do volume de resina. Peça um orçamento junto com a solicitação de coleta.
+
+**Minha resina é misturada com a de outros clientes?**
+Não. Cada lote é regenerado individualmente, a coluna é identificada e numerada com QR Code, e o histórico completo de cada resina fica no relatório técnico entregue ao cliente.
+
+**Que testes são feitos depois da regeneração?**
+A cada regeneração, uma amostra de 1 litro é testada. A Stella mede pH e condutividade e emite laudo técnico antes de o lote voltar para a operação.
+
+**Como funciona o Sistema Leva e Traz?**
+São cinco etapas: agendamento, retirada das colunas, transporte próprio até a unidade de Taboão da Serra, processamento e devolução da resina regenerada. O transporte depende da disponibilidade para a sua região.
+
+**Que tipos de resina a Stella regenera?**
+Leitos mistos e separados, abrandadores, resinas para remoção de nitrato e bário e resinas especiais. Também fornece resinas de troca iônica e faz manutenção e sanitização de colunas.
+
+**Onde fica a Stella Resinas e qual é o horário de atendimento?**
+A sede e a unidade de regeneração ficam na R. Afonso Desidério, 30, em Taboão da Serra (SP), CEP 06795-040. O atendimento é de segunda a sexta, das 07:30 às 17:30, pelo telefone (11) 4786-8000.
