@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de conteúdo: blog e vagas — Portal do Cliente</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/img/logo-aclaris.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .cms-grid{ display:grid; grid-template-columns:1fr; gap:24px; align-items:start; }
+  .cms-grid .panel-card .form-grid2{ grid-template-columns:1fr 1fr; }
+  .cms-grid > .panel-card{ min-width:0; }
+  .field textarea{ font-family:var(--font-body); font-size:14px; padding:10px 12px; border:1px solid var(--line); background:var(--paper); color:var(--ink); resize:vertical; min-height:96px; line-height:1.5; }
+  .field textarea:focus{ outline:2px solid var(--gold-dark); outline-offset:1px; border-color:var(--gold-dark); background:var(--white); }
+  .slug-preview{ font-family:var(--font-mono); font-size:12px; color:var(--steel); background:var(--paper-2); padding:9px 12px; word-break:break-all; margin-bottom:16px; }
+  .slug-preview b{ color:var(--ink); font-weight:600; }
+  .form-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+  .form-actions .btn{ flex:1 1 auto; }
+  .tbl{ width:100%; border-collapse:collapse; font-size:13px; }
+  .tbl th{ text-align:left; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--steel-light); padding:10px 12px; border-bottom:1px solid var(--line); font-weight:500; }
+  .tbl td{ padding:12px; border-bottom:1px solid var(--line); vertical-align:middle; }
+  .tbl tr:last-child td{ border-bottom:none; }
+  .tbl .t-title{ font-weight:600; color:var(--ink); line-height:1.35; }
+  .tbl .t-sub{ font-family:var(--font-mono); font-size:11px; color:var(--steel-light); margin-top:3px; word-break:break-all; }
+  .tbl .actions{ white-space:nowrap; text-align:right; }
+  .status-pill.draft{ background:var(--paper-2); color:var(--steel); }
+  .status-pill.closed{ background:var(--paper-2); color:var(--steel); }
+  .status-pill.published{ background:#E3F4E8; color:var(--ok); }
+  .status-pill.open{ background:#E3F4E8; color:var(--ok); }
+  button.status-pill{ border:0; cursor:pointer; font:inherit; }
+  .tbl-wrap{ overflow-x:auto; }
+  .confirm-del{ color:#C0392B !important; border-color:#C0392B !important; font-family:var(--font-mono); font-size:11px; padding:0 8px; width:auto !important; }
+  .mini{ font-family:var(--font-mono); font-size:11px; color:var(--steel-light); margin-top:6px; line-height:1.5; }
+  .file-mock{ border:1px dashed var(--line); padding:14px; font-size:13px; color:var(--steel); background:var(--paper); }
+  .file-mock input{ margin-top:8px; font-size:13px; }
+  .is-hidden{ display:none !important; }
+  .field, .field input, .field select, .field textarea, .form-grid2 > *{ min-width:0; max-width:100%; }
+  .field input, .field select{ width:100%; }
+  .shell .container{ padding-left:16px; padding-right:16px; }
+  @media (max-width: 700px){ .cms-grid .panel-card .form-grid2{ grid-template-columns:1fr; } }
+  @media (max-width: 560px){
+    .tbl thead{ display:none; }
+    .tbl, .tbl tbody, .tbl tr, .tbl td{ display:block; width:100%; }
+    .tbl tr{ border-bottom:1px solid var(--line); padding:12px 0; }
+    .tbl td{ border:0; padding:4px 12px; }
+    .tbl td.actions{ text-align:left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="mock-banner">Protótipo clicável — o painel mostra como a equipe cadastra e publica. Nada é gravado de verdade: os dados ficam só neste navegador.</div>
+
+<header class="portal-bar">
+  <div class="container">
+    <div class="brands">
+      <img src="assets/img/logo-aclaris.png" alt="Aclaris">
+      <div class="divider"></div>
+      <img src="assets/img/logo-stella.png" alt="Stella Resinas">
+      <span class="wordmark">Portal do Cliente · Conteúdo</span>
+    </div>
+    <div class="who">
+      <span>Administradora</span>
+      <a href="admin.html">Clientes</a>
+      <a href="login.html">Sair</a>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <div class="container">
+    <div class="shell-head">
+      <div>
+        <h1>Blog e vagas</h1>
+        <p>Escreva artigos e publique vagas sem depender de programador. Cada item publicado ganha endereço próprio no site.</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-box"><span class="n" id="stat-posts">0</span><span class="l"> — Artigos publicados</span></div>
+      <div class="stat-box"><span class="n" id="stat-drafts">0</span><span class="l"> — Rascunhos</span></div>
+      <div class="stat-box"><span class="n" id="stat-jobs">0</span><span class="l"> — Vagas abertas</span></div>
+    </div>
+
+    <div class="tab-nav">
+      <button class="tab-btn is-active" data-tab="blog" type="button">Blog</button>
+      <button class="tab-btn" data-tab="vagas" type="button">Vagas</button>
+    </div>
+
+    <!-- BLOG -->
+    <div data-tab-panel="blog" style="padding-top:24px">
+      <div class="cms-grid">
+        <div class="panel-card">
+          <div class="panel-card__head"><h2>Artigos</h2></div>
+          <div class="panel-card__body" style="padding:0">
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead><tr><th>Título</th><th>Empresa</th><th>Status</th><th></th></tr></thead>
+                <tbody id="post-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card__head"><h2 id="post-form-title">Novo artigo</h2></div>
+          <div class="panel-card__body">
+            <form id="post-form">
+              <div class="form-grid2">
+                <div class="field full">
+                  <label for="p-titulo">Título</label>
+                  <input id="p-titulo" type="text" required placeholder="Ex.: Quando trocar a resina do abrandador">
+                </div>
+                <div class="field">
+                  <label for="p-empresa">Empresa</label>
+                  <select id="p-empresa" class="select-input">
+                    <option>Aclaris</option>
+                    <option>Stella Resinas</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="p-categoria">Categoria</label>
+                  <select id="p-categoria" class="select-input">
+                    <option>Engenharia</option>
+                    <option>Operação</option>
+                    <option>Manutenção</option>
+                    <option>Normas</option>
+                    <option>Custos</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="p-data">Data</label>
+                  <input id="p-data" type="date" required>
+                </div>
+                <div class="field">
+                  <label for="p-status">Status</label>
+                  <select id="p-status" class="select-input">
+                    <option value="published">Publicar agora</option>
+                    <option value="draft">Salvar como rascunho</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="p-resumo">Resumo (aparece na lista e nas respostas de busca)</label>
+                  <textarea id="p-resumo" maxlength="240" placeholder="Duas ou três frases que respondem à pergunta do artigo."></textarea>
+                </div>
+                <div class="field full">
+                  <label for="p-texto">Texto do artigo</label>
+                  <textarea id="p-texto" rows="7" placeholder="Escreva em parágrafos curtos. Use uma linha para cada item de lista."></textarea>
+                </div>
+                <div class="field full">
+                  <div class="file-mock">
+                    Imagem de capa
+                    <input type="file" accept="image/*" id="p-imagem">
+                  </div>
+                </div>
+              </div>
+              <div class="slug-preview" id="post-slug">Endereço: <b>/blog/…</b></div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-gold" id="post-submit">Salvar artigo</button>
+                <button type="button" class="btn btn-ghost" id="post-cancel" hidden>Cancelar edição</button>
+              </div>
+              <p class="mini">Ao publicar, o artigo ganha uma página com o endereço acima, entra na lista do blog e no mapa do site. Rascunhos não aparecem no site.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VAGAS -->
+    <div data-tab-panel="vagas" hidden style="padding-top:24px">
+      <div class="cms-grid">
+        <div class="panel-card">
+          <div class="panel-card__head"><h2>Vagas</h2></div>
+          <div class="panel-card__body" style="padding:0">
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead><tr><th>Vaga</th><th>Empresa</th><th>Status</th><th></th></tr></thead>
+                <tbody id="job-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-card__head"><h2 id="job-form-title">Nova vaga</h2></div>
+          <div class="panel-card__body">
+            <form id="job-form">
+              <div class="form-grid2">
+                <div class="field full">
+                  <label for="j-titulo">Cargo</label>
+                  <input id="j-titulo" type="text" required placeholder="Ex.: Auxiliar Comercial">
+                </div>
+                <div class="field">
+                  <label for="j-empresa">Empresa</label>
+                  <select id="j-empresa" class="select-input">
+                    <option>Aclaris</option>
+                    <option>Stella Resinas</option>
+                    <option>Ambas</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="j-area">Área</label>
+                  <select id="j-area" class="select-input">
+                    <option>Comercial</option>
+                    <option>Engenharia / Projetos</option>
+                    <option>Técnica / Manutenção</option>
+                    <option>Logística</option>
+                    <option>Administrativo</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="j-local">Local</label>
+                  <input id="j-local" type="text" value="Taboão da Serra/SP">
+                </div>
+                <div class="field">
+                  <label for="j-regime">Regime</label>
+                  <select id="j-regime" class="select-input">
+                    <option>Presencial</option>
+                    <option>Híbrido</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="j-atividades">Principais atividades (uma por linha)</label>
+                  <textarea id="j-atividades" rows="4"></textarea>
+                </div>
+                <div class="field full">
+                  <label for="j-requisitos">Requisitos (uma por linha)</label>
+                  <textarea id="j-requisitos" rows="4"></textarea>
+                </div>
+                <div class="field full">
+                  <label for="j-email">Currículos vão para</label>
+                  <input id="j-email" type="email" value="fiscal@aclaris.com.br" required>
+                </div>
+                <div class="field">
+                  <label for="j-status">Status</label>
+                  <select id="j-status" class="select-input">
+                    <option value="open">Aberta</option>
+                    <option value="closed">Encerrada</option>
+                  </select>
+                </div>
+              </div>
+              <div class="slug-preview" id="job-slug">Endereço: <b>/vagas/…</b></div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-gold" id="job-submit">Publicar vaga</button>
+                <button type="button" class="btn btn-ghost" id="job-cancel" hidden>Cancelar edição</button>
+              </div>
+              <p class="mini">Cada vaga aberta ganha uma página própria, com a marcação que o Google usa para listar vagas. Ao encerrar, a página deixa de aparecer como aberta.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY = 'portal-conteudo-v1';
+  var STATUS_LABEL = { published:'Publicado', draft:'Rascunho', open:'Aberta', closed:'Encerrada' };
+
+  var seed = {
+    posts: [
+      { id:'p1', titulo:'Locação de desmineralizador: quando faz mais sentido do que comprar', empresa:'Aclaris', categoria:'Custos', data:'2026-09-01', resumo:'Manutenção não programada, aumento temporário de produção ou um novo projeto podem pedir uma solução mais rápida que um investimento definitivo.', status:'published' },
+      { id:'p2', titulo:'Diagnóstico 360° vai além da análise da água', empresa:'Aclaris', categoria:'Engenharia', data:'2026-01-20', resumo:'Ele avalia o sistema inteiro: operação, eficiência, consumo, riscos e oportunidades de melhoria.', status:'published' },
+      { id:'p3', titulo:'Osmose reversa industrial: o treinamento que ensina a operar na prática', empresa:'Aclaris', categoria:'Operação', data:'2026-02-10', resumo:'Operação incorreta impacta custo operacional, desempenho e confiabilidade do processo.', status:'published' },
+      { id:'p4', titulo:'Regenerar a resina na hora certa não é achismo, é controle de processo', empresa:'Stella Resinas', categoria:'Operação', data:'2026-01-15', resumo:'Quando a resina satura, a qualidade da água começa a cair mesmo que o sistema pareça funcionando.', status:'published' },
+      { id:'p5', titulo:'No transporte da coluna, retirar a água interna não é detalhe', empresa:'Stella Resinas', categoria:'Operação', data:'2025-12-10', resumo:'Retirar a água interna é segurança e preservação do equipamento.', status:'published' },
+      { id:'p6', titulo:'Regeneração de resina na eletroerosão: quando compensa e quanto se economiza', empresa:'Stella Resinas', categoria:'Custos', data:'2026-03-05', resumo:'Nem toda resina saturada precisa virar descarte.', status:'published' }
+    ],
+    jobs: [
+      { id:'v1', titulo:'Auxiliar Comercial', empresa:'Ambas', area:'Comercial', local:'Taboão da Serra/SP', regime:'Presencial', atividades:'Atendimento por WhatsApp, telefone e e-mail\nRegistro e organização das solicitações comerciais\nApoio na elaboração e no envio de propostas\nAcompanhamento de propostas e follow-ups', requisitos:'Ensino médio completo\nBoa comunicação oral e escrita\nConhecimento básico de Excel, Word e e-mail\nOrganização, pontualidade e responsabilidade', email:'fiscal@aclaris.com.br', status:'open' }
+    ]
+  };
+
+  var data;
+  try {
+    var raw = localStorage.getItem(KEY);
+    data = raw ? JSON.parse(raw) : JSON.parse(JSON.stringify(seed));
+  } catch(e) { data = JSON.parse(JSON.stringify(seed)); }
+
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(data)); } catch(e) {} }
+  function uid(p){ return p + Date.now().toString(36); }
+  function esc(s){ return String(s || '').replace(/[&<>"]/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
+  function slugify(t){
+    return String(t || '').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase()
+      .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);
+  }
+  function fmtBR(iso){ if(!iso) return ''; var p = iso.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+  function empresaTag(e){
+    if (e === 'Aclaris') return '<span class="company-tag aclaris">Aclaris</span>';
+    if (e === 'Stella Resinas') return '<span class="company-tag stella">Stella Resinas</span>';
+    return '<span class="company-tag aclaris">Aclaris</span> <span class="company-tag stella">Stella</span>';
+  }
+  function toast(msg){
+    var t = document.querySelector('.toast');
+    if (!t) { t = document.createElement('div'); t.className = 'toast'; t.innerHTML = '<i></i><span></span>'; document.body.appendChild(t); }
+    t.querySelector('span').textContent = msg;
+    t.classList.add('is-visible');
+    clearTimeout(t._t);
+    t._t = setTimeout(function(){ t.classList.remove('is-visible'); }, 2800);
+  }
+
+  /* ---------- abas ---------- */
+  document.querySelectorAll('.tab-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      document.querySelectorAll('[data-tab-panel]').forEach(function(p){
+        p.hidden = p.getAttribute('data-tab-panel') !== btn.getAttribute('data-tab');
+      });
+    });
+  });
+
+  /* ---------- blog ---------- */
+  var postForm = document.getElementById('post-form');
+  var postBody = document.getElementById('post-body');
+  var postEditId = null;
+
+  function renderPosts(){
+    var rows = data.posts.slice().sort(function(a,b){ return (b.data||'').localeCompare(a.data||''); });
+    postBody.innerHTML = rows.map(function(p){
+      var url = '/blog/' + (slugify(p.titulo) || 'sem-titulo') + '/';
+      return '<tr>' +
+        '<td><div class="t-title">' + esc(p.titulo) + '</div><div class="t-sub">' + fmtBR(p.data) + ' · ' + esc(p.categoria) + ' · ' + url + '</div></td>' +
+        '<td>' + empresaTag(p.empresa) + '</td>' +
+        '<td><button type="button" class="status-pill ' + p.status + '" data-toggle-post="' + p.id + '" title="Clique para mudar"><i></i>' + STATUS_LABEL[p.status] + '</button></td>' +
+        '<td class="actions"><button class="icon-btn" title="Editar" data-edit-post="' + p.id + '">✎</button>' +
+        '<button class="icon-btn danger" title="Excluir" data-del-post="' + p.id + '">×</button></td>' +
+        '</tr>';
+    }).join('');
+    document.getElementById('stat-posts').textContent = data.posts.filter(function(p){ return p.status === 'published'; }).length;
+    document.getElementById('stat-drafts').textContent = data.posts.filter(function(p){ return p.status === 'draft'; }).length;
+  }
+
+  function updatePostSlug(){
+    var t = document.getElementById('p-titulo').value;
+    document.getElementById('post-slug').innerHTML = 'Endereço: <b>/blog/' + (esc(slugify(t)) || '…') + '/</b>';
+  }
+  document.getElementById('p-titulo').addEventListener('input', updatePostSlug);
+
+  function resetPostForm(){
+    postEditId = null;
+    postForm.reset();
+    document.getElementById('p-data').value = new Date().toISOString().slice(0,10);
+    document.getElementById('post-form-title').textContent = 'Novo artigo';
+    document.getElementById('post-submit').textContent = 'Salvar artigo';
+    document.getElementById('post-cancel').hidden = true;
+    updatePostSlug();
+  }
+
+  postForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var titulo = document.getElementById('p-titulo').value.trim();
+    if (!titulo) return;
+    var item = {
+      titulo: titulo,
+      empresa: document.getElementById('p-empresa').value,
+      categoria: document.getElementById('p-categoria').value,
+      data: document.getElementById('p-data').value,
+      resumo: document.getElementById('p-resumo').value.trim(),
+      status: document.getElementById('p-status').value
+    };
+    if (postEditId) {
+      var ex = data.posts.find(function(p){ return p.id === postEditId; });
+      if (ex) Object.assign(ex, item);
+      toast(item.status === 'published' ? 'Artigo atualizado e publicado.' : 'Rascunho salvo.');
+    } else {
+      data.posts.push(Object.assign({ id: uid('p') }, item));
+      toast(item.status === 'published' ? 'Artigo publicado: a página já foi criada.' : 'Rascunho salvo. Nada aparece no site ainda.');
+    }
+    save(); renderPosts(); resetPostForm(); updateStats();
+  });
+
+  document.getElementById('post-cancel').addEventListener('click', resetPostForm);
+
+  postBody.addEventListener('click', function(e){
+    var t = e.target;
+    var id;
+    if ((id = t.getAttribute('data-toggle-post'))) {
+      var p = data.posts.find(function(x){ return x.id === id; });
+      p.status = p.status === 'published' ? 'draft' : 'published';
+      save(); renderPosts(); updateStats();
+      toast(p.status === 'published' ? 'Publicado. A página entra no ar.' : 'Voltou para rascunho. A página sai do ar.');
+    } else if ((id = t.getAttribute('data-edit-post'))) {
+      var q = data.posts.find(function(x){ return x.id === id; });
+      postEditId = id;
+      document.getElementById('p-titulo').value = q.titulo;
+      document.getElementById('p-empresa').value = q.empresa;
+      document.getElementById('p-categoria').value = q.categoria;
+      document.getElementById('p-data').value = q.data;
+      document.getElementById('p-resumo').value = q.resumo || '';
+      document.getElementById('p-status').value = q.status;
+      document.getElementById('p-texto').value = '';
+      document.getElementById('post-form-title').textContent = 'Editar artigo';
+      document.getElementById('post-submit').textContent = 'Salvar alterações';
+      document.getElementById('post-cancel').hidden = false;
+      updatePostSlug();
+      postForm.scrollIntoView({ behavior:'smooth', block:'start' });
+    } else if ((id = t.getAttribute('data-del-post'))) {
+      if (t.dataset.armed !== '1') {
+        t.dataset.armed = '1'; t.textContent = 'Confirmar'; t.classList.add('confirm-del');
+        setTimeout(function(){ if (t.isConnected) { t.dataset.armed = ''; t.textContent = '×'; t.classList.remove('confirm-del'); } }, 3000);
+        return;
+      }
+      data.posts = data.posts.filter(function(x){ return x.id !== id; });
+      save(); renderPosts(); updateStats();
+      toast('Artigo excluído.');
+    }
+  });
+
+  /* ---------- vagas ---------- */
+  var jobForm = document.getElementById('job-form');
+  var jobBody = document.getElementById('job-body');
+  var jobEditId = null;
+
+  function renderJobs(){
+    jobBody.innerHTML = data.jobs.map(function(j){
+      var url = '/vagas/' + (slugify(j.titulo) || 'sem-titulo') + '/';
+      return '<tr>' +
+        '<td><div class="t-title">' + esc(j.titulo) + '</div><div class="t-sub">' + esc(j.area) + ' · ' + esc(j.local) + ' · ' + esc(j.regime) + '</div><div class="t-sub">' + url + '</div></td>' +
+        '<td>' + empresaTag(j.empresa) + '</td>' +
+        '<td><button type="button" class="status-pill ' + j.status + '" data-toggle-job="' + j.id + '" title="Clique para mudar"><i></i>' + STATUS_LABEL[j.status] + '</button></td>' +
+        '<td class="actions"><button class="icon-btn" title="Editar" data-edit-job="' + j.id + '">✎</button>' +
+        '<button class="icon-btn danger" title="Excluir" data-del-job="' + j.id + '">×</button></td>' +
+        '</tr>';
+    }).join('');
+  }
+
+  function updateJobSlug(){
+    var t = document.getElementById('j-titulo').value;
+    document.getElementById('job-slug').innerHTML = 'Endereço: <b>/vagas/' + (esc(slugify(t)) || '…') + '/</b>';
+  }
+  document.getElementById('j-titulo').addEventListener('input', updateJobSlug);
+
+  function resetJobForm(){
+    jobEditId = null;
+    jobForm.reset();
+    document.getElementById('j-local').value = 'Taboão da Serra/SP';
+    document.getElementById('j-email').value = 'fiscal@aclaris.com.br';
+    document.getElementById('job-form-title').textContent = 'Nova vaga';
+    document.getElementById('job-submit').textContent = 'Publicar vaga';
+    document.getElementById('job-cancel').hidden = true;
+    updateJobSlug();
+  }
+
+  jobForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var titulo = document.getElementById('j-titulo').value.trim();
+    if (!titulo) return;
+    var item = {
+      titulo: titulo,
+      empresa: document.getElementById('j-empresa').value,
+      area: document.getElementById('j-area').value,
+      local: document.getElementById('j-local').value.trim(),
+      regime: document.getElementById('j-regime').value,
+      atividades: document.getElementById('j-atividades').value,
+      requisitos: document.getElementById('j-requisitos').value,
+      email: document.getElementById('j-email').value.trim(),
+      status: document.getElementById('j-status').value
+    };
+    if (jobEditId) {
+      var ex = data.jobs.find(function(j){ return j.id === jobEditId; });
+      if (ex) Object.assign(ex, item);
+      toast('Vaga atualizada.');
+    } else {
+      data.jobs.push(Object.assign({ id: uid('v') }, item));
+      toast(item.status === 'open' ? 'Vaga publicada: a página de candidatura já foi criada.' : 'Vaga salva como encerrada.');
+    }
+    save(); renderJobs(); resetJobForm(); updateStats();
+  });
+
+  document.getElementById('job-cancel').addEventListener('click', resetJobForm);
+
+  jobBody.addEventListener('click', function(e){
+    var t = e.target;
+    var id;
+    if ((id = t.getAttribute('data-toggle-job'))) {
+      var j = data.jobs.find(function(x){ return x.id === id; });
+      j.status = j.status === 'open' ? 'closed' : 'open';
+      save(); renderJobs(); updateStats();
+      toast(j.status === 'open' ? 'Vaga reaberta.' : 'Vaga encerrada. A página deixa de aparecer como aberta.');
+    } else if ((id = t.getAttribute('data-edit-job'))) {
+      var q = data.jobs.find(function(x){ return x.id === id; });
+      jobEditId = id;
+      document.getElementById('j-titulo').value = q.titulo;
+      document.getElementById('j-empresa').value = q.empresa;
+      document.getElementById('j-area').value = q.area;
+      document.getElementById('j-local').value = q.local;
+      document.getElementById('j-regime').value = q.regime;
+      document.getElementById('j-atividades').value = q.atividades || '';
+      document.getElementById('j-requisitos').value = q.requisitos || '';
+      document.getElementById('j-email').value = q.email || '';
+      document.getElementById('j-status').value = q.status;
+      document.getElementById('job-form-title').textContent = 'Editar vaga';
+      document.getElementById('job-submit').textContent = 'Salvar alterações';
+      document.getElementById('job-cancel').hidden = false;
+      updateJobSlug();
+      jobForm.scrollIntoView({ behavior:'smooth', block:'start' });
+    } else if ((id = t.getAttribute('data-del-job'))) {
+      if (t.dataset.armed !== '1') {
+        t.dataset.armed = '1'; t.textContent = 'Confirmar'; t.classList.add('confirm-del');
+        setTimeout(function(){ if (t.isConnected) { t.dataset.armed = ''; t.textContent = '×'; t.classList.remove('confirm-del'); } }, 3000);
+        return;
+      }
+      data.jobs = data.jobs.filter(function(x){ return x.id !== id; });
+      save(); renderJobs(); updateStats();
+      toast('Vaga excluída.');
+    }
+  });
+
+  function updateStats(){
+    document.getElementById('stat-jobs').textContent = data.jobs.filter(function(j){ return j.status === 'open'; }).length;
+  }
+
+  resetPostForm();
+  resetJobForm();
+  renderPosts();
+  renderJobs();
+  updateStats();
+})();
+</script>
+
+</body>
+</html>
