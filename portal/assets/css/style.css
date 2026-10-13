@@ -119,7 +119,7 @@ button{ font-family:inherit; }
 }
 
 /* ---------- dashboard shell ---------- */
-.shell{ min-height:calc(100vh - 68px); background:var(--paper); padding:40px 0 80px; }
+.shell{ min-height:calc(100vh - 68px); background:var(--paper) url('../img/fundo-paginas.webp') center top / cover no-repeat fixed; padding:40px 0 80px; }
 .shell-head{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:32px; }
 .shell-head h1{ font-family:var(--font-display); font-weight:700; font-size:26px; color:var(--ink); letter-spacing:-0.01em; margin:0 0 4px; }
 .shell-head p{ color:var(--steel); font-size:14px; margin:0; }
