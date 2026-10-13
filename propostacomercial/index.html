@@ -223,6 +223,17 @@ td .tag{ font-family:var(--font-mono); font-size:11px; color:var(--steel); displ
 .schedule > div{ background:var(--white); border:1px solid var(--line); border-radius:3px; padding:10px 12px; font-size:12.5px; color:var(--steel); font-variant-numeric:tabular-nums; }
 .schedule b{ display:block; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--steel-light); font-weight:500; margin-bottom:3px; }
 @media (max-width:700px){ .schedule{ grid-template-columns:repeat(2,1fr); } }
+.invest-card__value{ font-family:var(--font-display); font-weight:800; font-size:clamp(32px,6vw,44px); color:#D4A94A; letter-spacing:-0.01em; font-variant-numeric:tabular-nums; }
+.pay-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
+.pay{ background:var(--white); border:1px solid var(--line); border-radius:3px; padding:20px 20px 18px; }
+.pay__tag{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--steel-light); }
+.pay h3{ font-size:17px; font-weight:700; margin:6px 0 4px; color:var(--ink); }
+.pay__total{ font-family:var(--font-display); font-size:22px; font-weight:800; color:var(--gold-dark); margin-bottom:12px; font-variant-numeric:tabular-nums; }
+.pay-list{ list-style:none; margin:0; padding:0; display:grid; gap:0; }
+.pay-list li{ font-size:13px; color:var(--steel); line-height:1.4; padding:8px 0; border-top:1px solid var(--line); }
+.pay-list li:first-child{ border-top:0; }
+.pay-list li b{ display:block; color:var(--ink); font-weight:600; font-size:13.5px; }
+@media (max-width:700px){ .pay-grid{ grid-template-columns:1fr; } }
 footer{ padding-top:28px; border-top:1px solid var(--line); }
 footer p{ font-size:13px; color:var(--steel-light); line-height:1.6; max-width:56ch; }
 @page{ size:A4; margin:12mm; }
@@ -551,25 +562,53 @@ footer p{ font-size:13px; color:var(--steel-light); line-height:1.6; max-width:5
     <h2>Investimento</h2>
     <div class="invest-card">
       <div class="invest-card__label">Investimento total do projeto</div>
-      <div class="invest-card__amount">
-        <span class="prefix">R$</span>
-        <input type="text" id="total-input" inputmode="numeric" value="22.000,00" aria-label="Valor total do projeto" readonly>
+      <div class="invest-card__amount"><span class="prefix">R$</span><span class="invest-card__value">22.000,00</span></div>
+      <div class="invest-card__installment">escolha uma das duas formas de pagamento abaixo</div>
+    </div>
+
+    <div class="pay-grid">
+      <div class="pay">
+        <div class="pay__tag">Forma 1</div>
+        <h3>Entrada + 5 parcelas</h3>
+        <div class="pay__total">R$ 22.000,00</div>
+        <ul class="pay-list">
+          <li><b>Entrada: R$ 10.000,00</b>no ato da assinatura do contrato</li>
+          <li><b>1ª parcela: R$ 2.400,00</b>15/11/2026</li>
+          <li><b>2ª parcela: R$ 2.400,00</b>15/12/2026</li>
+          <li><b>3ª parcela: R$ 2.400,00</b>15/01/2027</li>
+          <li><b>4ª parcela: R$ 2.400,00</b>15/02/2027</li>
+          <li><b>5ª parcela: R$ 2.400,00</b>15/03/2027</li>
+        </ul>
       </div>
-      <div class="invest-card__installment">ou <span id="installment-display">10x de R$ 2.200,00</span></div>
+      <div class="pay">
+        <div class="pay__tag">Forma 2</div>
+        <h3>10 parcelas</h3>
+        <div class="pay__total">R$ 26.500,00</div>
+        <ul class="pay-list">
+          <li><b>1ª parcela: R$ 2.650,00</b>15/11/2026</li>
+          <li><b>2ª parcela: R$ 2.650,00</b>15/12/2026</li>
+          <li><b>3ª parcela: R$ 2.650,00</b>15/01/2027</li>
+          <li><b>4ª parcela: R$ 2.650,00</b>15/02/2027</li>
+          <li><b>5ª parcela: R$ 2.650,00</b>15/03/2027</li>
+          <li><b>6ª parcela: R$ 2.650,00</b>15/04/2027</li>
+          <li><b>7ª parcela: R$ 2.650,00</b>15/05/2027</li>
+          <li><b>8ª parcela: R$ 2.650,00</b>15/06/2027</li>
+          <li><b>9ª parcela: R$ 2.650,00</b>15/07/2027</li>
+          <li><b>10ª parcela: R$ 2.650,00</b>15/08/2027</li>
+        </ul>
+      </div>
     </div>
 
     <ul class="included-list">
       <li><b>Site institucional Aclaris</b>: 17 páginas, uma para cada tecnologia, com identidade visual própria, vídeos e fotos reais</li>
       <li><b>Site institucional Stella Resinas</b>: 13 páginas, uma para cada serviço, com o conteúdo real do LinkedIn</li>
       <li><b>SEO técnico, buscadores de IA e desempenho</b>: dados estruturados, perguntas e respostas, <code>llms.txt</code>, acessibilidade e mapa de redirecionamentos</li>
-      <li><b>Portal do Cliente</b>: login seguro por CNPJ, documentos e fotos por data, compartilhado entre as duas empresas, com painel próprio para a equipe</li>
+      <li><b>Portal do Cliente</b>: login seguro por CNPJ, documentos e fotos por data, compartilhados entre as duas empresas, com painel próprio para a equipe</li>
       <li><b>Módulo de RH</b>: vagas com página própria, publicadas, editadas e encerradas pela empresa</li>
       <li><b>Blog com painel de redação</b>: cada artigo publicado vira uma página</li>
       <li><b>Migração completa para WordPress</b>: tema próprio, sem Elementor, validado em ambiente de teste antes de ir ao ar</li>
     </ul>
     <p class="invest-note">Valor fechado, sem divisão por serviço. Cobre o desenvolvimento de todos os itens acima e a migração segura para produção, com backup e homologação antes da troca.</p>
-    <p class="invest-note">Pagamento em 10 parcelas: a primeira em 20/10/2026 e as demais todo dia 15, de novembro de 2026 a julho de 2027.</p>
-    <div class="schedule" id="schedule"></div>
   </section>
 
   <section>
@@ -588,43 +627,7 @@ footer p{ font-size:13px; color:var(--steel-light); line-height:1.6; max-width:5
 
 </div>
 
-<script>
-(function(){
-  var totalInput = document.getElementById('total-input');
-  var installmentDisplay = document.getElementById('installment-display');
-  var schedule = document.getElementById('schedule');
-  var PARCELAS = 10;
-  var START = new Date(2026, 9, 20);   // 20/10/2026 (mês é 0-based)
 
-  function parse(v){
-    var n = parseFloat(String(v).replace(/\./g,'').replace(',','.'));
-    return isNaN(n) ? 0 : n;
-  }
-  function format(n){
-    return n.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
-  }
-  function dueDate(i){
-    if (i === 0) return START;
-    var d = new Date(2026, 10, 15);       // primeira data mensal: 15/11/2026
-    d.setMonth(d.getMonth() + (i - 1));
-    return d;
-  }
-  function fmtDate(d){
-    return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + d.getFullYear();
-  }
-  function recalc(){
-    var total = parse(totalInput.value);
-    var parcela = total / PARCELAS;
-    installmentDisplay.textContent = PARCELAS + 'x de R$ ' + format(parcela);
-    var html = '';
-    for (var i = 0; i < PARCELAS; i++) {
-      html += '<div><b>' + (i + 1) + 'ª parcela</b>R$ ' + format(parcela) + ' · ' + fmtDate(dueDate(i)) + '</div>';
-    }
-    schedule.innerHTML = html;
-  }
-  recalc();
-})();
-</script>
 
 </body>
 </html>
