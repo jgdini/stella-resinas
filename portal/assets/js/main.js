@@ -65,8 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-tab-panel]').forEach(p => {
           p.hidden = p.getAttribute('data-tab-panel') !== btn.getAttribute('data-tab');
         });
+        document.querySelectorAll('.side__nav a').forEach(a => a.classList.toggle('is-current', a.getAttribute('data-nav') === btn.getAttribute('data-tab')));
       });
     });
+    // abre a aba indicada no link do menu (ex.: admin.html#documentos)
+    const hashTab = document.querySelector(`.tab-btn[data-tab="${location.hash.slice(1)}"]`);
+    if (hashTab) hashTab.click();
   }
 
   // Admin: cadastrar cliente (maquete) — adiciona linha na tabela
