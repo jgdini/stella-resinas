@@ -70,10 +70,7 @@ button{ font-family:inherit; }
   min-height:calc(100vh - 68px);
   display:flex; align-items:center; justify-content:center;
   padding:56px 20px;
-  background:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size:36px 36px;
+  background:var(--ink) url('../img/fundo-login.webp') center / cover no-repeat;
 }
 .auth-card{
   width:100%; max-width:420px; background:var(--white);

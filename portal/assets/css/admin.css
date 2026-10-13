@@ -28,7 +28,8 @@ body{ background:var(--a-bg); color:var(--a-text); }
 /* ---------- layout ---------- */
 .app{ display:grid; grid-template-columns:248px minmax(0,1fr); min-height:100vh; }
 .side{
-  background:var(--a-ink); color:#C9D2DC; padding:26px 16px 22px;
+  background:linear-gradient(180deg, rgba(11,33,56,.82) 0%, rgba(11,33,56,.92) 100%), var(--a-ink) url('../img/fundo-login.webp') center / cover no-repeat;
+  color:#C9D2DC; padding:26px 16px 22px;
   display:flex; flex-direction:column; gap:26px; position:sticky; top:0; height:100vh;
 }
 .side__brand{ display:flex; align-items:center; gap:10px; padding:0 10px; flex-wrap:wrap; }
