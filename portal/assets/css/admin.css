@@ -57,7 +57,7 @@ body{ background:var(--a-bg); color:var(--a-text); }
 }
 .side__foot a{ color:var(--a-gold); font-size:13px; font-weight:600; }
 
-.main{ min-width:0; padding:34px 40px 72px; }
+.main{ min-width:0; padding:34px 40px 72px; background:var(--a-bg) url('../img/fundo-paginas.webp') center top / cover no-repeat fixed; }
 .shell{ background:transparent; padding:0; min-height:auto; }
 .main .container{ max-width:1080px; margin:0; padding:0; }
 
