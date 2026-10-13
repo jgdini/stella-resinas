@@ -3,33 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meus Documentos — Portal do Cliente</title>
+<title>Meus documentos — Portal do Cliente</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/img/logo-aclaris.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
 
 <div class="mock-banner">Protótipo clicável — documentos abaixo são exemplos, não arquivos reais.</div>
 
-<header class="portal-bar">
-  <div class="container">
-    <div class="brands">
-      <img src="assets/img/logo-aclaris.png" alt="Aclaris">
-      <div class="divider"></div>
-      <img src="assets/img/logo-stella.png" alt="Stella Resinas">
-      <span class="wordmark">Portal do Cliente</span>
-    </div>
-    <div class="who">
-      <span>Indústria Exemplo Ltda</span>
-      <a href="login.html">Sair</a>
-    </div>
-  </div>
-</header>
-
+<div class="app">
+<aside class="side">
+  <div class="side__brand"><img src="assets/img/logo-aclaris.png" alt="Aclaris"><span class="x">×</span><img src="assets/img/logo-stella.png" alt="Stella Resinas"></div>
+  <div class="side__label">Portal do Cliente</div>
+  <nav class="side__nav" aria-label="Portal">
+    <a href="portal.html" class="is-current" data-nav="documentos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M10 13h6M10 17h6"/></svg><span>Meus documentos</span></a>
+  </nav>
+  <div class="side__foot"><span>Indústria Exemplo Ltda</span><a href="login.html">Sair</a></div>
+</aside>
+<main class="main">
 <div class="shell">
   <div class="container">
     <div class="shell-head">
@@ -55,7 +51,7 @@
       <div class="date-group__label">Setembro de 2026</div>
 
       <div class="doc-row" data-category="laudo">
-        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__icon laudo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg></div>
         <div class="doc-row__main">
           <div class="doc-row__title">Laudo de Regeneração — Lote TQ-04</div>
           <div class="doc-row__meta">
@@ -68,7 +64,7 @@
       </div>
 
       <div class="doc-row" data-category="foto">
-        <div class="doc-row__icon foto">🖼️</div>
+        <div class="doc-row__icon foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-8 8"/></svg></div>
         <div class="doc-row__main">
           <div class="doc-row__title">Fotos — Manutenção preventiva do sistema RO</div>
           <div class="doc-row__meta">
@@ -85,7 +81,7 @@
       <div class="date-group__label">Agosto de 2026</div>
 
       <div class="doc-row" data-category="laudo">
-        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__icon laudo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg></div>
         <div class="doc-row__main">
           <div class="doc-row__title">Relatório Diagnóstico 360°</div>
           <div class="doc-row__meta">
@@ -98,7 +94,7 @@
       </div>
 
       <div class="doc-row" data-category="laudo">
-        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__icon laudo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg></div>
         <div class="doc-row__main">
           <div class="doc-row__title">Laudo de Regeneração — Lote TQ-03</div>
           <div class="doc-row__meta">
@@ -111,7 +107,7 @@
       </div>
 
       <div class="doc-row" data-category="foto">
-        <div class="doc-row__icon foto">🖼️</div>
+        <div class="doc-row__icon foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-8 8"/></svg></div>
         <div class="doc-row__main">
           <div class="doc-row__title">Fotos — Coleta de colunas para regeneração</div>
           <div class="doc-row__meta">
@@ -128,7 +124,7 @@
       <div class="date-group__label">Junho de 2026</div>
 
       <div class="doc-row" data-category="laudo">
-        <div class="doc-row__icon laudo">📄</div>
+        <div class="doc-row__icon laudo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg></div>
         <div class="doc-row__main">
           <div class="doc-row__title">Laudo de Regeneração — Lote TQ-02</div>
           <div class="doc-row__meta">
@@ -141,7 +137,7 @@
       </div>
 
       <div class="doc-row" data-category="foto">
-        <div class="doc-row__icon foto">🖼️</div>
+        <div class="doc-row__icon foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-8 8"/></svg></div>
         <div class="doc-row__main">
           <div class="doc-row__title">Fotos — Instalação do sistema de ultrafiltração</div>
           <div class="doc-row__meta">
@@ -155,6 +151,8 @@
     </div>
 
   </div>
+</div>
+</main>
 </div>
 
 <script src="assets/js/main.js"></script>
