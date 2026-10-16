@@ -1630,3 +1630,14 @@ html.lenis, html.lenis body{ height:auto; }
   html.js-motion [data-pin-steps]{ min-height:calc(100vh - 90px); display:flex; align-items:center; }
   html.js-motion [data-pin-steps] > .container{ width:100%; }
 }
+
+/* ---------- crédito da Halo Company (rodapé) ---------- */
+.footer-credit{ display:flex; justify-content:center; padding-top:18px; font-family:var(--font-body); font-size:13px; color:rgba(255,255,255,.7); }
+.footer-credit p{ margin:0; display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.footer-credit .halo-credit{ display:inline-flex; align-items:center; gap:10px; color:rgba(255,255,255,.92); transition:color .3s ease; }
+.footer-credit .halo-credit:hover{ color:#fff; }
+.footer-credit .halo-sym{ width:22px; height:22px; flex:none; transition:transform .8s cubic-bezier(.22,1,.36,1); }
+.footer-credit .halo-credit:hover .halo-sym{ transform:rotate(120deg); }
+.footer-credit .wm{ font-weight:600; letter-spacing:-0.01em; font-size:15px; }
+.footer-credit .wm small{ font-size:.6em; font-weight:600; letter-spacing:.24em; text-transform:uppercase; opacity:.6; }
+@media (prefers-reduced-motion: reduce){ .footer-credit .halo-sym{ transition:none; } }
