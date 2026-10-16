@@ -236,3 +236,10 @@ table.client-table tr:last-child td{ border-bottom:none; }
   font-family:var(--font-mono); font-size:11.5px; color:var(--gold-dark);
   text-align:center; padding:8px 16px;
 }
+
+/* ---------- crédito da Halo Company (rodapé dos portais) ---------- */
+.credit{ display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:6px 12px; padding:28px 16px 8px; font-size:12.5px; color:#8A90A0; font-family:var(--font-body); }
+.credit img{ height:30px; width:auto; display:block; }
+.credit a{ display:inline-flex; opacity:.92; transition:opacity .15s ease; }
+.credit a:hover{ opacity:1; }
+.credit--dark{ background:var(--ink); padding:18px 16px; color:#AEB9C6; margin:0; }
