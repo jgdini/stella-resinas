@@ -1389,7 +1389,7 @@ html.js-motion .reveal:not(.is-revealed) .segment-chip{
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1366px){
-  .nav-desktop, .header-cta{ display:none; }
+  .nav-desktop{ display:none; }
   .nav-toggle{ display:flex; }
   .hero-inner{ grid-template-columns:1fr; }
 }
@@ -1641,3 +1641,6 @@ html.lenis, html.lenis body{ height:auto; }
 .footer-credit .wm{ font-weight:600; letter-spacing:-0.01em; font-size:15px; }
 .footer-credit .wm small{ font-size:.6em; font-weight:600; letter-spacing:.24em; text-transform:uppercase; opacity:.6; }
 @media (prefers-reduced-motion: reduce){ .footer-credit .halo-sym{ transition:none; } }
+
+/* ---------- ajustes da crítica (home) ---------- */
+@media (max-width: 640px){ .header-cta{ display:none; } }
