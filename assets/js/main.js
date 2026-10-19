@@ -117,30 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2200);
   }
 
-  // Instrument panel readout — live-feeling data rotation
-  const panelRows = document.querySelectorAll('[data-readout]');
-  const readings = {
-    ph: ['7.1', '7.0', '7.2', '7.1', '7.1'],
-    conductividade: ['12.4', '12.1', '12.6', '12.4', '12.3'],
-    capacidade: ['98.4', '98.1', '98.6', '98.3', '98.5'],
-    ciclos: ['1', '1', '1', '1', '1'],
-  };
-  if (panelRows.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let tick = 0;
-    const panelEl = document.querySelector('.panel');
-    let panelVisible = true;
-    if (panelEl && 'IntersectionObserver' in window) {
-      new IntersectionObserver((es) => { panelVisible = es[0].isIntersecting; }).observe(panelEl);
-    }
-    setInterval(() => {
-      if (document.hidden || !panelVisible) return;
-      tick = (tick + 1) % 5;
-      panelRows.forEach(row => {
-        const key = row.getAttribute('data-readout');
-        if (readings[key]) row.textContent = readings[key][tick];
-      });
-    }, 2600);
-  }
 
   // Job accordion: close others when one opens (optional single-open behavior)
   const jobCards = document.querySelectorAll('.job-card');
